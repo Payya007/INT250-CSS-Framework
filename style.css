@@ -1,0 +1,166 @@
+* {
+    margin: 10px;
+    background-color: black;
+}
+
+#home {
+    margin: -1px -1px 0 -1px;
+    padding-bottom: 2cm;
+    background-color: #9370DB; 
+}
+
+header {
+    font-size: 30px;      
+    color: #E6E6FA;       
+    float: left;          
+    padding-left: 2cm;    
+    background: transparent;
+}
+
+header b {
+    margin : 0px 0px ;
+    background-color: #9370DB; 
+}
+
+nav {
+    float: right;         
+    padding-right: 1cm;   
+    background: transparent;
+    margin : 0px 0px ;
+    background-color: #9370DB ;
+}
+
+nav a{
+    margin : 0px 0px ;
+}
+
+nav button {
+    color: lightgray;          
+    background-color:#301934; 
+    margin: 10px;              
+    padding: 10px;             
+    font-size: 20px;           
+    border-radius: 1mm;
+    text-decoration: none;     
+    margin : 0px 0px ;
+}
+
+nav button:hover {
+    color: white;              
+    font-weight: bolder;       
+    background-color: purple;  
+}
+
+#all-conversions section {
+    display: grid;              
+    align-items: center;        
+    justify-items: center;      
+}
+
+figure {
+    float: left;                
+    margin: auto;               
+    width: 200px;               
+}
+
+img {
+    width: 200px;               
+}
+
+figcaption {
+    color: black;               
+    font-size: 17px;            
+    text-align: center;         
+}
+
+fieldset button {
+    font-size: 20px;            
+    border: 1px solid transparent; 
+    border-radius: 40px;        
+    width: 100%;                
+    background-color: lightgreen; 
+    padding: 0 15px;            
+}
+
+fieldset button:hover {
+    cursor: pointer;            
+}
+
+#tmp, #wgt, #dst {
+    border-top-style: solid;    
+    border-top-width: 20px;     
+    border-radius: 10px;        
+    background-color: white !important; 
+    width: 600px;               
+    height: 400px;              
+    margin-top: 25px;           
+    margin-bottom: 25px;        
+    display: flex;              
+    margin-left: 50px;          
+}
+
+#tmp {
+    border-top-color: green;    
+}
+
+#wgt {
+    border-top-color: coral;    
+}
+
+#dst {
+    border-top-color: cyan;     
+}
+
+#tmp *, #wgt *, #dst * {
+    background-color: white !important;
+    color: black !important;
+}
+
+#tmp button, #wgt button, #dst button {
+    background-color: lightgreen !important;
+}
+
+#temperature { border-top-color: green; } 
+#weight { border-top-color: coral; }      
+#distance { border-top-color: cyan; }     
+
+legend {
+    font-size: 30px;            
+    font-weight: bolder;    
+    background-color: white ;    
+}
+
+#go-home {
+    width: 40px;                 
+    height: 40px;                
+    display: flex;               
+    align-items: center;         
+    justify-content: center;     
+    border-radius: 100%;         
+    background-color: cyan !important; 
+    position: fixed;             
+    bottom: 280px;                
+}
+
+#go-home img {
+    width: 30px;                 
+    background: transparent;     
+}
+
+footer {
+    background-color: lightpink !important; 
+    margin-top: 20px;            
+    color: black !important;     
+    text-align: center;
+    padding: 10px;
+}
+
+footer p {
+    background-color: lightpink !important; 
+    margin-left: 0px ;
+    text-align: left;
+}
+
+footer b{
+     background-color: lightpink !important; 
+}
