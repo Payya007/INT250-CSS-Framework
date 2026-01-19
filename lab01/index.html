@@ -14,12 +14,13 @@
         <header>
             <b>Unit Conversions</b>
         </header>
-
-        <nav>
-            <a href="#"><button>Temperature</button></a>
-            <a href="#"><button>Weight</button></a>
-            <a href="#"><button>Distance</button></a>
-        </nav>
+        <div class="topdiv">
+            <nav>
+                <a href="#"><button>Temperature</button></a>
+                <a href="#"><button>Weight</button></a>
+                <a href="#"><button>Distance</button></a>
+            </nav>
+        </div>
     </section>
 
     <div id="all-conversions">
@@ -49,7 +50,7 @@
         <section id="weight">
             <div id="wgt">
                 <figure>
-                    <img src="weight.png" alt="Weight Scale" width="200px">
+                    <img src="weight.png" alt="Kilograms to Pounds Conversion" width="200px">
                     <figcaption>Kilograms to Pounds Conversion</figcaption>
                 </figure>
                 <article>
@@ -58,7 +59,8 @@
                         <label for="kilograms">Kilograms</label><br>
                         <input type="number" id="kilograms"><br>
                         <button type="button" onclick="weight()">Convert</button><br>
-                        <input type="number" id="pounds"><p id="pounds-result"></p><br> 
+                        <input type="number" id="pounds">
+                        <p id="pounds-result"></p><br>
                         <label for="pounds">Pounds</label>
                     </fieldset>
                     <aside>
@@ -71,7 +73,7 @@
         <section id="distance">
             <div id="dst">
                 <figure>
-                    <img src="distance.png" alt="Ruler" width="200px">
+                    <img src="distance.png" alt="Kilometer to Mile Conversion" width="200px">
                     <figcaption>Kilometer to Miles Conversion</figcaption>
                 </figure>
                 <article>
@@ -80,8 +82,9 @@
                         <label for="kilometers">Kilometers</label><br>
                         <input type="number" id="kilometers"><br>
                         <button type="button" onclick="distance()">Convert</button><br>
-                        <input type="number" id="miles"><p id="miles-result"></p><br>
-                        
+                        <input type="number" id="miles">
+                        <p id="miles-result"></p><br>
+
                         <label for="miles">Miles</label>
                     </fieldset>
                     <aside>
