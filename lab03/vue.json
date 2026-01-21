@@ -1,0 +1,21 @@
+{
+  "Vue SFC Script Setup": {
+    "prefix": "sfc",
+    "body": [
+      "<script setup>",
+      "$1",
+      "</script>",
+      " ",
+      "<template>",
+      "<div>",
+      "$2",
+      "</div>",
+      "</template>",
+      " ",
+      "<style scoped>",
+      "$3",
+      "</style>"
+    ],
+    "description": "Making simple Vue SFC Script Setup"
+  }
+}
