@@ -36,7 +36,7 @@ import ProfileCard from './components/ProfileCard.vue'
       following="50k"
       projects="0M"
       background="/src/assets/background.jpg"
-      profileimg="/src/assets/profile.jpg",
+      profileimg="/src/assets/myprofile3.jpg",
       instagram="https://www.instagram.com/4thvowelineng?igsh=MWpkNmJtbzY0NHhubw=="
       email="67130500036@ad.sit.kmutt.ac.th"
       github="https://github.com/UltraPixel042"
