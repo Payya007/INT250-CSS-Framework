@@ -1,5 +1,5 @@
 <script setup>
-import { ref, computed } from 'vue';
+import { ref } from 'vue';
 
 const count = ref(0);
 const step = ref(1);
@@ -16,7 +16,7 @@ const saveState = () => {
 function increase() {
   if (count.value + step.value <= max) {
     saveState();
-    count.value += step.value;
+    count.value =count.value + step.value;
   } else {
     saveState();
     count.value = max; //  ถ้าเกิน max ให้ค้างที่ max
@@ -26,7 +26,7 @@ function increase() {
 function decrease() {
   if (count.value - step.value >= min) {
     saveState();
-    count.value -= step.value;
+    count.value =count.value -step.value;
   } else {
     saveState();
     count.value = min; // ถ้าต่ำกว่า min ให้ค้างที่ min
@@ -82,7 +82,6 @@ function undo() {
   border-radius: 16px;
   box-shadow: 0 8px 30px rgba(0,0,0,0.1);
   text-align: center;
-  font-family: 'Inter', sans-serif;
 }
 
 .count-display {
@@ -136,6 +135,6 @@ function undo() {
 
 .btn:hover:not(:disabled) {
   opacity: 0.9;
-  transform: translateY(-2px);
+
 }
 </style>
