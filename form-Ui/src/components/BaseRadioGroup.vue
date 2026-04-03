@@ -12,7 +12,7 @@ defineProps({
 <template>
   <div>
     <p class="mb-3 block text-sm font-medium text-slate-700">
-      {{ label }}
+      {{ label }} <span class="text-red-500">*</span> 
     </p>
 
     <div class="grid grid-cols-1 gap-3 md:grid-cols-2">
