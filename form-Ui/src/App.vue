@@ -19,6 +19,7 @@ const form = reactive({
 });
 
 const submitted = ref(false);
+const showSuccessModal = ref(false);
 
 const programOptions = [
   { label: "Computer Science", value: "CS" },
@@ -74,13 +75,7 @@ const errors = computed(() => {
 
 const isFormValid = computed(() => Object.keys(errors.value).length === 0);
 
-function handleSubmit() {
-  submitted.value = true;
-
-  if (!isFormValid.value) return;
-
-  alert("Registration submitted successfully!");
-
+function resetForm() {
   form.fullName = "";
   form.studentId = "";
   form.email = "";
@@ -91,6 +86,19 @@ function handleSubmit() {
   form.track = "";
   form.agree = false;
   submitted.value = false;
+}
+
+function handleSubmit() {
+  submitted.value = true;
+
+  if (!isFormValid.value) return;
+
+  showSuccessModal.value = true;
+}
+
+function closeSuccessModal() {
+  showSuccessModal.value = false;
+  resetForm();
 }
 </script>
 
@@ -138,15 +146,16 @@ function handleSubmit() {
               <BaseSelect v-model="form.program" label="Program" placeholder="Select your program"
                 :options="programOptions" :error="submitted ? errors.program : ''" />
 
-              <BaseRadioGroup v-model="form.yearLevel" label="Year Level" name="yearLevel" :options="yearOptions"
-                :error="submitted ? errors.yearLevel : ''" required />
-            </div>
+              <BaseSelect v-model="form.track" label="Workshop Track" placeholder="Select your workshop track"
+                :options="trackOptions" :error="submitted ? errors.track : ''" required />
 
+
+            </div>
+            <BaseRadioGroup v-model="form.yearLevel" label="Year Level" name="yearLevel" :options="yearOptions"
+              :error="submitted ? errors.yearLevel : ''" required />
             <BaseTextarea v-model="form.bio" label="Message" placeholder="Write your message here"
               helper-text="You can briefly tell us why you're interested in this workshop." />
 
-            <BaseSelect v-model="form.track" label="Workshop Track" placeholder="Select your workshop track"
-              :options="trackOptions" :error="submitted ? errors.track : ''" required />
 
             <BaseCheckbox v-model="form.agree" label="I agree to the workshop terms and conditions."
               :error="submitted ? errors.agree : ''" />
@@ -158,11 +167,46 @@ function handleSubmit() {
                 Try submitting with empty fields to test validation feedback.
               </p>
 
-              <button type="submit"
-                class="inline-flex items-center justify-center rounded-lg bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 active:scale-[0.99]">
-                Submit Registration
-              </button>
+              <div class="flex gap-3">
+                <button type="button" @click="resetForm"
+                  class="inline-flex items-center justify-center rounded-lg border border-slate-300 bg-white px-5 py-2.5 text-sm font-semibold text-slate-700 shadow-sm transition hover:bg-slate-50">
+                  Reset Form
+                </button>
+
+                <button type="submit"
+                  class="inline-flex items-center justify-center rounded-lg bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 active:scale-[0.99]">
+                  Submit Registration
+                </button>
+              </div>
             </div>
+            <transition name="fade">
+              <div v-if="showSuccessModal"
+                class="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/35 px-4">
+                <div class="w-full max-w-2xl rounded-[28px] bg-white p-8 shadow-2xl md:p-10">
+                  <div class="mb-8 flex h-20 w-20 items-center justify-center rounded-full bg-green-100">
+                    <svg class="h-10 w-10 text-green-600" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M20 6 9 17l-5-5" />
+                    </svg>
+                  </div>
+
+                  <h2 class="text-4xl font-bold text-slate-900">
+                    Registration Submitted
+                  </h2>
+
+                  <p class="mt-4 text-xl leading-relaxed text-slate-500">
+                    Your workshop registration has been recorded successfully.
+                  </p>
+
+                  <div class="mt-10 flex justify-end">
+                    <button type="button" @click="closeSuccessModal"
+                      class="rounded-2xl bg-green-600 px-8 py-3 text-lg font-semibold text-white transition hover:bg-green-700">
+                      Close
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </transition>
           </form>
         </section>
       </div>

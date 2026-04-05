@@ -13,7 +13,7 @@ defineProps({
 <template>
   <div>
     <label class="mb-2 block text-sm font-medium text-slate-700">
-      {{ label }} <span class="text-red-500">*</span> 
+      {{ label }}
     </label>
 
     <textarea
