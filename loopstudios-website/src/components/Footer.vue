@@ -1,9 +1,9 @@
 <script setup>
     const props = defineProps({
         menuItems: {
-            type: Array,            // เช็คว่าค่าที่รีบเข้ามาต้องเป็น Array
-            required: true,         // ต้องส่งข้อมูลนี้มา ห้ามลืมส่ง
-            default: () => []       // ถ้าไม่มีข้อมูลส่งมาก็ให้เป็น [] ว่างๆ
+            type: Array,           
+            required: true,         
+            default: () => []       // ถ้าไม่มี data ก็ ส่งมาก็ให้เป็น arrray  ว่างๆ
         }
     });
 
